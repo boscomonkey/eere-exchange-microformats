@@ -1,0 +1,3814 @@
+HTML, BODY, DIV, SPAN, APPLET, OBJECT, IFRAME, H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE, A, ABBR, ACRONYM, ADDRESS, BIG, CITE, CODE, DEL, DFN, EM, FONT, IMG, INS, KBD, Q, S, SAMP, SMALL, STRIKE, STRONG, SUB, SUP, TT, VAR, DL, DT, DD, OL, UL, LI, FIELDSET, FORM, LABEL, LEGEND, TABLE, CAPTION, TBODY, TFOOT, THEAD, TR, TH, TD
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+TD INPUT.tdWhiteBackground, TD SELECT.tdWhiteBackground, TD TEXTAREA.tdWhiteBackground{
+    background-color: white !important;
+}
+
+/*remember to define focus styles!*/
+:focus
+{
+    outline: 0;
+}
+BODY
+{
+    line-height: 1;
+    color: #000000;
+    background: #FFFFFF;
+}
+OL, UL
+{
+    list-style: none;
+}
+/*tables still need 'cellspacing="0"' in the markup*/
+TABLE
+{
+    border-collapse: separate;
+    border-spacing: 0;
+}
+CAPTION, TH, TD
+{
+    text-align: left;
+    font-weight: normal;
+}
+BLOCKQUOTE:before, BLOCKQUOTE:after, Q:before, Q:after
+{
+    content: "";
+}
+BLOCKQUOTE, Q
+{
+    quotes: "" "";
+}
+/******* PAGE FRAMEWORK ************/
+*
+{
+    margin: 0;
+    padding: 0;
+}
+HTML, BODY
+{
+    background-color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: #3C4349;
+    margin: 0;
+    padding: 0;
+}
+/*removes frame from around "Share/Add This"*/
+DIV#_atssh
+{
+    display: none !important;
+}
+#outer
+{
+    font-size: 0.8em;
+    margin: auto;
+    min-width: 1060px;
+}
+/*column widths plus margin/padding should equal 1000px
+combinations include:
+6 + 2 = program/subsite home page (large left column, right column)
+1 + 4 + 2 = regular three column program/subsite page
+1 + 7 = two column program/subsite page
+8 = full width page
+*/
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8
+{
+    display: inline;
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.grid_1
+{
+    /*LEFT NAV*/
+    width: 150px;
+    margin-right: 30px;
+}
+.grid_2
+{
+    /*RIGHT NAV*/
+    width: 290px;
+    margin-left: 30px;
+}
+.grid_3
+{
+    /*RIGHT NAV LANDING*/
+    width: 335px;
+}
+.grid_4
+{
+    width: 500px; /*MIDDLE CONTENT*/
+}
+.grid_5
+{
+    /*LEFT NAV LANDING*/
+    width: 640px;
+}
+.grid_6
+{
+    /*LEFT CONTENT - NO NAV*/
+    width: 680px;
+}
+.grid_7
+{
+    /*RIGHT CONTENT - NO NAV*/
+    max-width: 80%;
+    width: 80%;
+}
+.grid_8
+{
+    /*FULL WIDTH*/
+    width: 1000px;
+    margin: auto 0;
+}
+.grid_4 UL, .grid_6 UL, .grid_7 UL, .grid_8 UL, DIV#printable UL
+{
+    margin: 1em 0 1em 2em;
+    list-style: disc;
+}
+/*grids that only have content, no nav.  don't want to add to grids that have standard nav*/
+.grid_4 OL, .grid_6 OL, .grid_7 OL, .grid_8 OL, DIV#printable OL
+{
+    margin: 1em 0 1em 2em;
+    list-style-type: decimal;
+}
+.grid_4 UL UL, .grid_6 UL UL, .grid_7 UL UL, .grid_8 UL UL, DIV#printable UL UL, .grid_4 UL UL UL, .grid_6 UL UL UL, .grid_7 UL UL UL, .grid_8 UL UL UL, DIV#printable UL UL UL
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.grid_4 OL OL, .grid_6 OL OL, .grid_7 OL OL, .grid_8 OL OL, DIV#printable OL OL, .grid_4 OL OL OL, .grid_6 OL OL OL, .grid_7 OL OL OL, .grid_8 OL OL OL, DIV#printable OL OL OL
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#wrapper
+{
+    width: 1000px;
+    text-align: left;
+    margin: 0 auto;
+}
+DIV#content
+{
+    margin: 0 auto;
+    /*width: 1000px;*/
+    padding-top: 12px;
+}
+DIV#printable
+{
+    width: 600px;
+    margin: 0 auto;
+    font-size: 0.8em;
+}
+DIV#printable H2
+{
+    margin-top: 12px;
+}
+DIV#printable H2.siteheader
+{
+    color: #666;
+    margin-top: 0;
+}
+DIV#printable H3
+{
+    color: #999;
+    margin: 12px 0;
+}
+/************* GENERAL ELEMENTS ****************/
+H1
+{
+    color: #004063;
+    font-size: 1.7em;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+    border-bottom: 3px solid #1F82BB;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+
+H2
+{
+    color: #004063;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+H2 A:link, H2 A:visited, H2 A:active
+{
+    text-decoration: none;
+    color: #004063;
+}
+H2 A:hover, H2 A:focus
+{
+    text-decoration: underline;
+    color: #004063;
+}
+H3
+{
+    font-weight: bold;
+    color: #3C4349;
+    line-height: 1.2em;
+}
+H4
+{
+    font-weight: bold;
+    color: #3C4349;
+    line-height: 1.1em;
+    font-style: italic;
+}
+P
+{
+    font-size: 1em;
+    text-align: left;
+    margin: 0 0 12px;
+    line-height: 1.4em;
+}
+EM
+{
+    font-style: italic;
+}
+STRONG
+{
+    font-weight: bold;
+}
+.hide
+{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.small
+{
+    font-size: 0.7em;
+}
+.med
+{
+    font-size: 0.8em;
+}
+.reg
+{
+    font-size: 1em;
+}
+SPAN.nobreak
+{
+    white-space: nowrap;
+}
+.notop
+{
+    margin-top: 0;
+}
+.nobottom
+{
+    margin-bottom: 0;
+}
+.nomargin
+{
+    margin: 0;
+}
+SUB
+{
+    font-size: smaller;
+    vertical-align: sub;
+    line-height: 1px;
+}
+SUP
+{
+    font-size: smaller;
+    vertical-align: super;
+    line-height: 1px;
+}
+UL
+{
+    margin-top: 0;
+}
+LI
+{
+    line-height: 1.3em;
+}
+LI
+{
+    line-height: 1.3em;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+DL
+{
+    margin: 1em 0;
+}
+DT
+{
+    margin: 1em 0 0;
+    font-weight: bold;
+}
+DD
+{
+    margin: 0.2em 0 0 2em;
+    padding-bottom: 0.2em;
+}
+/*Images*/
+IMG
+{
+    border: 0;
+}
+IMG.border
+{
+    border: 1px solid #999;
+}
+IMG.arrowicon
+{
+    float: none;
+    padding: 0 0 0 3px;
+    vertical-align: middle;
+}
+/*for div and img tags*/
+.floatright
+{
+    float: right;
+    padding: 0 0 12px 12px;
+}
+.floatleft
+{
+    float: left;
+    padding: 0 12px 12px 0;
+}
+P.caption
+{
+    background: #EEE;
+    padding: 5px;
+    margin: 0 0 12px;
+    font-size: 0.85em;
+    padding: 5px 2px 5px 8px;
+}
+/*LINKS*/
+A:link
+{
+    color: #BA4F16;
+}
+A:visited
+{
+    color: #183C56;
+}
+A:hover
+{
+    color: #3C4349;
+}
+A:active
+{
+    color: #3C4349;
+}
+A IMG
+{
+    vertical-align: middle;
+    border: none;
+}
+/*Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+.clearfix:after
+{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+* HTML .clearfix
+{
+    zoom: 1;
+}
+/*IE6*/
+*:first-child + HTML .clearfix
+{
+    zoom: 1;
+}
+/*IE7*/
+.clear
+{
+    clear: both;
+}
+/******************* PAGE TEMPLATE ELEMENTS ****************
+*********** EERE HEADER  *******/
+#eere_header
+{
+    background-color: #00324D;
+    background-image: url('../images/eere/header_logo.gif');
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    width: 100%;
+    height: 60px;
+}
+#eere_header_content
+{
+    width: 95%; 
+    margin: 0 auto;
+}
+#eere_header_content IMG
+{
+    float: left;
+}
+#eere_header DIV#global_links
+{
+    color: #FFF;
+    font-size: 0.8em;
+    line-height: 1.2em;
+    padding: 6px 0;
+    margin: 0.5em 0 0;
+    text-align: right;
+    float: right;
+}
+#eere_header DIV#global_links A:link, #eere_header DIV#global_links A:visited, #eere_header DIV#global_links A:active
+{
+    color: #FFF;
+    text-decoration: none;
+}
+#eere_header DIV#global_links A:hover
+{
+    color: #FFF;
+    text-decoration: underline;
+}
+/************ PROGRAM HEADER  *******/
+#program_header
+{
+    background-color: #333C41;
+    background-image: url('../images/eere/header_strip_blue.gif');
+    background-repeat: repeat-x;
+    height: 104px;
+    position: relative;
+}
+#program_header_subsite
+{
+    background-color: #FFF;
+    height: 115px;
+    position: relative;
+}
+#program_header_subsite_nonav
+{
+    height: 93px;
+    position: relative;
+    background-image: url('../images/eere/background_shim.gif');
+    background-repeat: repeat-x;
+    background-color: #FFF;
+    margin-bottom: 6px;
+}
+#program_header_content, #program_header_content_nonav
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+#program_header_subsite_content_nonav
+{
+    /*width: 1000px;*/
+    margin: 0 auto;
+    height: 93px;
+    border-bottom: 8px solid #004063;
+    background: none;
+}
+#sitename, #sitename2
+{
+    color: #FFF;
+    font-size: 2.2em;
+    font-weight: bold;
+    padding-top: 20px;
+    margin-right: 350px;
+}
+#sitename A, #sitename2 A
+{
+    color: #FFF;
+    text-decoration: none;
+}
+#program_header_subsite #sitename, #program_header_subsite_content_nonav #sitename
+{
+    color: #004063;
+    padding-top: 25px;
+}
+#program_header_content_nonav #sitename, #program_header_subsite_content_nonav #sitename
+{
+    padding-top: 35px;
+    padding-left: 10px;
+}
+#program_header_subsite_content_nonav #sitename2
+{
+    color: #004063;
+    padding-top: 20px;
+    font-size: 2em;
+    line-height: 1.1em;
+}
+/*name wraps to two lines*/
+#program_header_subsite #sitename A, #program_header_subsite_content_nonav #sitename A, #program_header_subsite #sitename2 A, #program_header_subsite_content_nonav #sitename2 A
+{
+    color: #004063;
+    text-decoration: none;
+}
+/*new for search area*/
+#program_header_content_nonav #searcharea
+{
+    padding-top: 30px;
+}
+#program_header_subsite_content_nonav #searcharea
+{
+    padding-top: 25px;
+    padding-right: 10px;
+}
+#searcharea
+{
+    float: right;
+    padding-top: 15px;
+    color: #FFF;
+    font-size: 0.8em;
+}
+#searcharea P
+{
+    padding-top: 3px;
+}
+#searcharea .radiobuttonlist
+{
+    display: inline;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 0;
+}
+/*end search area
+Search box*/
+#searchbox
+{
+    float: right;
+    padding: 15px 0 0;
+}
+#program_header_content_nonav #searchbox
+{
+    padding-top: 30px;
+}
+#program_header_subsite_content_nonav #searchbox
+{
+    padding-top: 25px;
+}
+#searchbox LABEL
+{
+    color: #FFF;
+    display: block;
+    font-size: 0.8em;
+    padding-bottom: 3px;
+}
+#searchbox INPUT
+{
+    font-size: 0.85em;
+    vertical-align: bottom;
+}
+#searchbox INPUT#search
+{
+    width: 170px;
+}
+#radiobutton
+{
+    float: right;
+    padding: 15px 0 0;
+    display: inline;
+    font-size: 0.8em; /*padding-bottom: 3px;*/
+}
+#searchbox P
+{
+    color: #FFF;
+    text-decoration: none;
+    margin: 0;
+    font-size: 0.8em;
+    padding: 0;
+}
+#searchbox P :link, #searchbox P :visited
+{
+    color: #FFF;
+    text-decoration: none;
+}
+#searchbox P A:hover
+{
+    color: #FABD17;
+}
+#program_header_subsite LABEL, #program_header_subsite #searchbox P, #program_header_subsite #searchbox P :link, #program_header_subsite P :visited, #program_header_subsite_nonav LABEL, #program_header_subsite_nonav #searchbox P, #program_header_subsite_nonav #searchbox P :link, #program_header_subsite_nonav #searchbox P :visited
+{
+    color: #3C4349;
+}
+/*top nav*/
+DIV#topnav
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    font-size: 0.95em;
+    width: 1100px;
+}
+#topnav LI
+{
+    /*min-width: 100px;*/
+    display: inline-block;
+    text-align: center;
+    margin: 0; /*width:100px;*/
+    float: left;
+    height: 40px;
+    line-height: 1.2em;
+    font-weight: bold;
+    margin-right: 45px;
+}
+#topnav LI A
+{
+    text-decoration: none;
+    width: 100px;
+    color: #FFFFFF;
+    height: 40px;
+    display: table-cell;
+    vertical-align: middle;
+}
+#ie-lt8 #topnav LI A
+{
+    height: auto;
+    display: block;
+    padding: inherit;
+    clear: expression( style.paddingTop = "" + (offsetHeight < parentNode.offsetHeight ? parseInt((parentNode.offsetHeight - offsetHeight) / 2) + "px" : "0"), style.paddingBottom = "" + (offsetHeight < parentNode.offsetHeight ? parseInt((parentNode.offsetHeight - offsetHeight)) + "px" : "0"), style.clear = "none", 0 );
+}
+#topnav LI A:hover, #topnav LI.current A
+{
+    color: #FABD17;
+    background: #004063;
+}
+#topnav LI#nav_home, #topnav LI#nav_home A
+{
+    min-width: 70px;
+    width: 70px;
+}
+#topnav LI#nav_about, #topnav LI#nav_about A
+{
+    min-width: 80px;
+    width: 80px;
+}
+#topnav LI#nav_financial, #topnav LI#nav_financial A
+{
+    min-width: 120px;
+    width: 120px;
+}
+#topnav LI#nav_research, #topnav LI#nav_research A
+{
+    min-width: 120px;
+    width: 120px;
+}
+#topnav LI#nav_program, #topnav LI#nav_program A
+{
+    min-width: 100px;
+    width: 100px;
+}
+#topnav LI#nav_info, #topnav LI#nav_info A
+{
+    min-width: 110px;
+    width: 110px;
+}
+#topnav LI#nav_news, #topnav LI#nav_news A
+{
+    min-width: 70px;
+    width: 70px;
+}
+#topnav LI#nav_events, #topnav LI#nav_events A
+{
+    min-width: 70px;
+    width: 70px;
+}
+#program_header_subsite #topnav
+{
+    background-color: #1D7FB6;
+    width: 1000px;
+}
+#program_header_subsite #topnav LI A
+{
+    background-color: #1D7FB6;
+    text-decoration: none;
+    color: #FFF;
+}
+#program_header_subsite #topnav LI A:hover, #program_header_subsite #topnav LI.current A
+{
+    color: #FABD17;
+    background-color: #004063;
+}
+/*************** UTILITIES AREA ***************/
+DIV#utility_line
+{
+    overflow: auto;
+    padding: 0px 0px 0px 5px;
+}
+DIV#breadcrumb
+{
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #3C4349;
+    margin-bottom: 24px;
+    float: left;
+}
+DIV#breadcrumb A
+{
+    color: #3C4349;
+}
+DIV#breadcrumb A:hover
+{
+    color: #BA4F16;
+}
+UL#utilities
+{
+    width: 291px;
+    color: #3C4349;
+    margin: 0 0 24px;
+    padding: 0;
+    font-size: 0.8em;
+    list-style: none;
+    height: 11px;
+    line-height: 1.3em;
+    float: right;
+}
+UL#utilities.nositemap
+{
+    width: 206px;
+}
+UL#utilities LI
+{
+    display: block;
+    float: left;
+    vertical-align: bottom;
+}
+UL#utilities A
+{
+    color: #3C4349;
+    text-decoration: underline;
+}
+UL#utilities A:hover
+{
+    color: #BA4F16;
+}
+UL#utilities LI#sitemap
+{
+    width: 65px;
+    background-image: url('../images/eere/icon_sitemap.gif');
+    background-repeat: no-repeat;
+    padding: 0 0 0 20px;
+    margin: 0;
+}
+UL#utilities LI#print
+{
+    width: 100px;
+    background-image: url('../images/eere/icon_print.gif');
+    background-repeat: no-repeat;
+    padding: 0 0 0 20px;
+    margin: 0;
+}
+UL#utilities LI#share
+{
+    width: 83px;
+}
+.addthis_button
+{
+    text-align: right;
+}
+/*************** LEFT NAV ***************/
+#leftnav
+{
+    padding: 0;
+    margin-bottom: 1em;
+    font-size: 0.85em;
+}
+#leftnav UL
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#leftnav LI
+{
+    margin: 0;
+    font-weight: bold;
+}
+#leftnav LI A
+{
+    display: block;
+    padding: 5px;
+    color: #3C4349;
+    text-decoration: none;
+    width: 140px;
+}
+#leftnav LI A:hover, #leftnav LI A.current
+{
+    background-color: #EEE;
+}
+#leftnav LI LI
+{
+    margin: 0;
+    display: inline;
+    border-bottom: 1px solid #DDD;
+    display: inline-block;
+}
+#leftnav LI LI A
+{
+    padding: 5px 5px 5px 15px;
+    width: 130px;
+    font-weight: normal;
+}
+#leftnav LI LI LI
+{
+    list-style-type: none;
+    background-image: url('../images/eere/third_level_leftnav_dash.gif');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    border-bottom: none;
+}
+#leftnav LI LI LI A
+{
+    padding: 5px 5px 5px 25px;
+    width: 120px;
+    background-image: url('../images/eere/third_level_leftnav_dash.gif');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+#leftnav LI LI LI A:hover, #leftnav LI LI LI A#current
+{
+    background-color: #EEE;
+    background-image: url('../images/eere/third_level_leftnav_dash.gif');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+.grid_1 DIV.feature
+{
+    color: #004063;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    padding: 0.5em 0.1em;
+    font-weight: bold;
+    font-size: 0.95em;
+    line-height: 1.4em;
+}
+.grid_1 DIV.feature A
+{
+    color: #015F11;
+    text-decoration: none;
+}
+.grid_1 DIV.feature A:hover
+{
+    color: #3C4349;
+}
+.grid_1 DIV#quicklinks
+{
+    background: #EEE;
+    width: 90%;
+    margin: 60px auto 1.5em;
+    padding: 0.3em 0;
+    font-size: 0.9em;
+}
+.grid_1 DIV#quicklinks H3
+{
+    padding: 5px;
+    color: #3C4349;
+}
+.grid_1 DIV#quicklinks UL
+{
+    border-top: 3px solid #CCC;
+    color: #3C4349;
+    list-style: disc;
+    padding: 0.2em 0.1em 0 1.3em;
+}
+.grid_1 DIV#quicklinks UL UL
+{
+    border-top: none;
+    padding: 0.2em 0.1em 0 0.7em;
+}
+.grid_1 DIV#quicklinks A
+{
+    text-decoration: none;
+}
+.grid_1 DIV#quicklinks A:hover
+{
+    text-decoration: underline;
+}
+.grid_1 DIV#quicklinks UL LI
+{
+    margin: 5px;
+}
+/*************** "Program Highlights" AREA **************
+provides two column layout (highlights_left/highlights_right, h2 and h3 w/rule headers, )
+
+header above the program highlights*/
+H2.hp
+{
+    width: 100%;
+    background-color: #FFF;
+    color: #006021;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    margin: 2em 0 0;
+    font-weight: bold;
+}
+/*if doesn't have h2.hp header, Program Highlights needs margin-top added to it.*/
+.program_highlights
+{
+    width: 94%;
+    background-color: #EEE;
+    height: auto; /*float: left;*/
+    padding: 15px 20px;
+    border-top: 3px solid #1F82BB;
+    border-bottom: 3px solid #1F82BB;
+    margin: 0px 0px 25px;
+}
+DIV.grid_4 .program_highlights
+{
+    width: 460px;
+}
+/*left column*/
+.program_highlights DIV#highlights_left, .program_highlights DIV.highlights_left
+{
+    float: left;
+    width: 48%; /*you can change these percentages in site specific style sheet*/
+    padding: 0 24px 0 0;
+    text-align: left;
+}
+/*right column*/
+.program_highlights DIV#highlights_right, .program_highlights DIV.highlights_right
+{
+    float: right;
+    width: 48%; /*you can change these percentages in site specific style sheet*/
+    padding: 0;
+}
+/*Divs available in program highlights:
+div div - just adds 20 pixels to bottom
+div div div - removes 20 pixels from bottom
+div.links - formatting for lists of links including quick links
+div.feature - for individual feature elements, should be in a div
+div.text - provides some formatting for h4s
+*/
+DIV.program_highlights DIV DIV
+{
+    clear: both;
+}
+DIV.program_highlights DIV DIV DIV
+{
+    padding-bottom: 0;
+}
+.program_highlights H2, .contentGroup H2
+{
+    color: #004063;
+    font-size: 1.1em;
+    margin: 15px 0 10px;
+    border-bottom: 1px solid #004063;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.program_highlights H3, .contentGroup H3
+{
+    color: #004063;
+    font-size: 1em;
+    margin: 0 0 10px;
+    border-bottom: 1px solid #004063;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    clear: both;
+}
+.program_highlights H3.noborder, .contentGroup H3.noborder
+{
+    color: #3C4349;
+    font-size: 1.05em;
+    margin: 0 0 10px 10px;
+    border-bottom: none;
+    padding: 0;
+    text-transform: none;
+    font-weight: bold;
+}
+/*two column list for links with no bullets*/
+.program_highlights UL.left
+{
+    float: left;
+    width: 48%;
+    margin: 0;
+    padding-left: 4px;
+}
+.program_highlights UL.right
+{
+    float: right;
+    width: 48%;
+    margin: 0;
+    padding: 0;
+}
+/*links with no bullets and underlines*/
+.program_highlights DIV.links UL LI, .program_highlights DIV.links UL LI A
+{
+    color: #BA4F16;
+    font-size: 1em;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0.2em;
+}
+.program_highlights DIV.links UL LI A:hover
+{
+    color: #3C4349;
+}
+/*list of links with bullets and no underlines (including quick links)*/
+.program_highlights DIV.links UL.bullets LI, .program_highlights DIV.links UL.bullets LI A
+{
+    list-style: disc;
+}
+.program_highlights DIV.links UL.bullets LI
+{
+    line-height: 1.3em;
+}
+.program_highlights DIV.links UL.bullets LI A
+{
+    text-decoration: underline;
+}
+.program_highlights DIV.links UL.bullets LI A:hover
+{
+    text-decoration: underline;
+}
+/*subbullets*/
+.program_highlights DIV.links UL.bullets UL
+{
+    margin: 3px 0;
+}
+.program_highlights DIV.links UL.bullets UL LI
+{
+    font-size: 1em;
+    background-image: url('../images/eere/dash_quicklinks.gif');
+    background-position: 0 0.7em;
+    background-repeat: no-repeat;
+    padding-left: 10px;
+    list-style: none;
+}
+/*Features in program highlights area*/
+.program_highlights DIV.feature
+{
+    color: #3C4349;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.program_highlights DIV.feature UL IMG
+{
+    padding: 0 12px 0 0;
+    margin: 0;
+    border: none;
+    float: left;
+}
+.program_highlights DIV.feature UL IMG.arrowicon
+{
+    float: none;
+    padding: 0 0 0 3px;
+    vertical-align: middle;
+}
+.program_highlights DIV.feature UL
+{
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+.program_highlights DIV.feature LI
+{
+    border: 1px solid #DDD;
+    border-width: 1px 0;
+    margin: 2px 0;
+    height: 60px;
+    padding: 0;
+}
+.program_highlights DIV.feature LI A, .program_highlights DIV.feature LI A:visited, .program_highlights DIV.feature LI A:hover, .program_highlights DIV.feature LI A:active
+{
+    color: #3C4349;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    height: 50px;
+}
+.program_highlights DIV.feature LI.inline A
+{
+    display: inline;
+    padding: 0;
+    text-decoration: underline;
+    height: auto;
+    font-size: 0.8em;
+}
+* HTML .program_highlights DIV.feature LI A
+{
+    /*make hover effect work in IE*/
+    width: 97%;
+}
+.program_highlights DIV.feature LI A:hover
+{
+    background: #FFF;
+    color: #BA4F16;
+    height: 50px;
+}
+.program_highlights DIV.feature A EM
+{
+    color: #3C4349;
+    display: block;
+    font-weight: normal;
+}
+.program_highlights DIV.feature A SPAN
+{
+    color: #3C4349;
+    font-size: 1em;
+    display: block;
+    font-weight: normal;
+}
+/*Program highlights text only*/
+.program_highlights DIV.text H4
+{
+    font-weight: bold;
+}
+.program_highlights DIV.text H4 A
+{
+    text-decoration: none;
+}
+.program_highlights DIV.text H4 A:hover
+{
+    text-decoration: underline;
+}
+.program_highlights DIV.text H4 A:visited
+{
+    color: #3C4349;
+}
+.program_highlights DIV.text H4 A IMG
+{
+    vertical-align: middle;
+    text-decoration: none;
+    padding-left: 3px;
+    border: none;
+}
+/*************** RIGHT NAVIGATION COLUMN **************
+Features*/
+DIV.grid_2 DIV.feature
+{
+    color: #3C4349;
+    border-bottom: 1px solid #DDD;
+    padding: 0 10px 15px;
+    margin-bottom: 10px;
+    width: 270px;
+}
+DIV.grid_2 DIV.feature IMG
+{
+    padding: 0 12px 0 0;
+    margin: 0;
+    border: none;
+    float: left;
+}
+DIV.grid_2 DIV.feature H3 IMG, DIV.grid_2 DIV.feature P IMG
+{
+    padding: 0 0 0 3px;
+    float: none;
+}
+DIV.grid_2 DIV.feature P
+{
+    margin: 0;
+}
+DIV.grid_2 DIV.feature H3 A
+{
+    text-decoration: none;
+    color: #3C4349;
+}
+DIV.grid_2 DIV.feature H3 A:hover
+{
+    text-decoration: underline;
+    color: #BA4F16;
+}
+DIV.grid_2 DIV.features DIV:last-child
+{
+    border-bottom: 1px solid #004063;
+}
+DIV.grid_2 H2
+{
+    color: #004063;
+    text-transform: uppercase;
+    border-bottom: 3px solid #004063;
+    background-color: #EEE;
+    font-weight: bold;
+    padding: 5px 0 3px 12px;
+    font-size: 1em;
+    clear: left;
+    margin-bottom: 1em;
+}
+UL.newsevents, UL.extras
+{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 1em;
+    font-size: 0.9em;
+}
+UL.newsevents LI
+{
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 0.75em;
+}
+UL.newsevents LI:last-child
+{
+    border-bottom: 1px solid #004063;
+    margin-bottom: 0;
+}
+UL.newsevents H3 A
+{
+    color: #3C4349;
+    text-decoration: none;
+    padding-bottom: 0.6em;
+    font-weight: normal;
+    line-height: 1.3em;
+    font-weight: bold;
+}
+UL.newsevents H3 A:hover
+{
+    text-decoration: underline;
+    color: #BA4F16;
+}
+UL.newsevents P
+{
+    color: #64717B;
+    text-decoration: none;
+    margin-bottom: 0.5em;
+    line-height: 1.3em;
+}
+UL.newsevents P A
+{
+    text-decoration: none;
+}
+UL.newsevents P A:hover
+{
+    text-decoration: underline;
+    color: #BA4F16;
+}
+UL.extras LI
+{
+    padding-bottom: 3px;
+}
+UL.extras LI A
+{
+    color: #004063;
+    font-weight: bold;
+    text-decoration: none;
+}
+UL.extras LI A:hover
+{
+    color: #BA4F16;
+    font-weight: bold;
+    text-decoration: underline;
+}
+UL.extras LI IMG
+{
+    vertical-align: middle;
+}
+/*li.newsextras a:visited{
+color:#666;
+font-weight:bold;
+}*/
+DIV#survey
+{
+    position: relative;
+    border-bottom: 1px solid #004063;
+    padding-bottom: 1.5em;
+}
+DIV#survey INPUT.survey_yes
+{
+    margin-left: 10px;
+    margin-right: 3px;
+}
+DIV#survey INPUT.survey_no
+{
+    margin-left: 25px;
+    margin-right: 3px;
+}
+DIV#survey INPUT.submit
+{
+    position: absolute;
+    right: 5px;
+}
+/*********************** FOOTER ***************/
+#footer
+{
+    width: 100%;
+    background-color: #FFF;
+    margin: auto;
+    clear: both;
+}
+#footer P
+{
+    padding-top: 10px;
+    font-size: 0.7em;
+    text-align: center;
+    color: #3C4349;
+    line-height: 1.3em;
+}
+#footer A
+{
+    color: #3C4349;
+    text-decoration: none;
+}
+#footer A:hover
+{
+    color: #3C4349;
+    text-decoration: underline;
+}
+.disableForAccessibility
+{
+    text-align: right;
+    width: 100%;
+    padding-top: 100px;
+    clear: both;
+}
+.disableForAccessibility INPUT
+{
+    margin: 0px 0px 0px 5px;
+}
+/*********************** REUSABLE PAGE ELEMENTS **************
+Data Tables*/
+TABLE.data
+{
+    border-top: 1px solid #CCC;
+    border-left: 1px solid #CCC;
+    font-size: 0.95em;
+    margin-bottom: 12px;
+}
+CAPTION
+{
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 6px;
+    background-color: #CCD6DB;
+    border: 1px solid #CCC;
+    border-bottom: none;
+    line-height: 1.3em;
+    text-align: center;
+}
+CAPTION.blue
+{
+    background-color: #CCD6DB;
+}
+TABLE.data TD
+{
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    padding: 5px;
+    line-height: 1.3em;
+}
+TR.grey
+{
+    background-color: #EEE;
+}
+TABLE.data TH
+{
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    padding: 5px;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.left
+{
+    text-align: left;
+}
+/*ROUNDED CORNER BOXES
+gray background w/ gray border - override the classes marked "background" with inline styles to change*/
+DIV.roundedcorner
+{
+    margin: 12px 0;
+    width: 250px;
+}
+.boxtop, .boxbottom
+{
+    display: block;
+    background: transparent;
+    font-size: 1px;
+}
+.boxb1, .boxb2, .boxb3, .boxb4
+{
+    display: block;
+    overflow: hidden;
+}
+.boxb1, .boxb2, .boxb3
+{
+    height: 1px;
+}
+.boxb2, .boxb3, .boxb4
+{
+    background: #EEE;
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+}
+/*background*/
+.boxb1
+{
+    margin: 0 5px;
+    background: #CCC;
+}
+.boxb2
+{
+    margin: 0 3px;
+    border-width: 0 2px;
+}
+.boxb3
+{
+    margin: 0 2px;
+}
+.boxb4
+{
+    height: 2px;
+    margin: 0 1px;
+}
+.boxmiddle
+{
+    display: block;
+    background: #EEE;
+    border: 0 solid #CCC;
+    border-width: 0 1px;
+    text-align: left;
+}
+/*background
+classes to control padding and alignment -- use inline style to change other treatments*/
+.graphical_header
+{
+    margin-bottom: 6px;
+}
+/*for boxes that use a graphical header*/
+.boxcontent
+{
+    background: transparent;
+    margin: 0 6px 0 10px;
+    padding-bottom: 6px;
+}
+DIV#printable DIV.boxcontent H3
+{
+    margin: 0;
+    color: #000;
+}
+DIV#printable DIV.boxcontent H2
+{
+    margin: 0;
+    padding-top: 0.5em;
+}
+/*box code - change to appropriate width inline
+
+<div class="roundedcorner">
+<b class="boxtop"><b class="boxb1"></b><b class="boxb2"></b><b class="boxb3"></b><b class="boxb4"></b></b>
+<div class="boxmiddle"><div class="boxcontent">
+<!-- if the box top is an image, put it here and add the .graphical_header class -->
+
+<!-- content goes here --->
+
+</div></div>
+<b class="boxbottom"><b class="boxb4"></b><b class="boxb3"></b><b class="boxb2"></b><b class="boxb1"></b></b>
+</div>
+
+
+*****************    CALLOUT BOXES *******************/
+DIV.callout
+{
+    width: 250px;
+    color: #000;
+    background-color: #F1F1F1;
+    border: 1px solid #CCC;
+    padding: 8px;
+    margin: 15px 0 15px 15px;
+    float: right;
+    position: relative;
+}
+DIV.calloutwide
+{
+    width: 100%;
+    color: #000;
+    background-color: #F1F1F1;
+    border: 1px solid #CCC;
+    padding: 8px;
+    margin: 15px;
+}
+/******************* Back to Top Anchor Link ****************/
+P.backtotop
+{
+    text-align: right;
+    font-size: 0.9em;
+}
+P.backtotop A:hover
+{
+    color: #900;
+}
+P.backtotop :link, P.backtotop :visited
+{
+    color: #006;
+}
+/*anchor list*/
+#anchorlist LI, .anchorlist LI
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -10px;
+}
+.reddot
+{
+    font-size: 8pt;
+    font-family: Verdana, Arial, Helvetica;
+    font-weight: normal;
+    color: #FF0000;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+/*Forms*/
+FORM
+{
+    margin: 0;
+}
+.formarea
+{
+    padding: 25px;
+    margin: 0;
+    border: 0;
+    text-align: left;
+    width: 600px;
+    border: 1px solid #CCC;
+}
+.formarea LABEL
+{
+    font-size: 70%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 18px;
+    display: block;
+    font-weight: bold;
+    color: #666;
+}
+.formarea DIV.radioheader
+{
+    font-size: 75%;
+    color: #666;
+    margin-bottom: 2px;
+    margin-top: 18px;
+    font-weight: bold;
+}
+.formarea P.instruction
+{
+    font-size: 70%;
+    color: #666;
+    margin-bottom: 3px;
+}
+.formarea P.sample
+{
+    font-size: 70%;
+    color: #666;
+    margin-bottom: 3px;
+    font-style: italic;
+}
+.formarea TEXTAREA
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+FIELDSET
+{
+    padding: 15px;
+    margin-bottom: 12px;
+}
+LEGEND
+{
+    font-size: 80%;
+    font-weight: bold;
+    color: #900;
+}
+.form-button
+{
+    color: #000;
+    background-color: #FFF;
+    border: 1px solid #666;
+    font-family: "Trebuchet MS" , "Bitstream Vera Sans" , verdana, lucida, arial, helvetica, sans-serif;
+    font-weight: bold;
+    padding-left: 1px;
+    padding-right: 1px;
+    margin: 0;
+    font-size: xx-small;
+    voice-family: "\}\; voice-family: inherit";
+    font-size: x-small;
+}
+.formRow
+{
+    padding: 5px 0px 10px;
+    vertical-align: middle;
+    clear: both;
+}
+DIV.formLabel
+{
+    vertical-align: middle;
+    display: inline;
+}
+DIV.formLabel LABEL
+{
+    font-weight: bold;
+}
+.formLabel
+{
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+Div.pocTitle
+{
+   border-bottom: 3px solid #1f82bb; 
+   min-width: 100%; 
+   font-weight: bold;
+}
+
+Div.pocCol
+{
+    float:left; 
+    margin-right: 25px;
+}
+
+.labelWidth190 .formLabel
+{
+    width: 190px;
+    min-width: 190px;
+    display: inline-block;
+}
+.labelWidth190 .formValue
+{
+    vertical-align: top;
+}
+.labelWidth250 .formLabel
+{
+    width: 250px;
+    min-width: 250px;
+    display: inline-block;
+}
+.labelWidth250 .formValue
+{
+    vertical-align: top;
+}
+DIV.formValue
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+.formValue
+{
+}
+.formLayoutTable.labelWidth170 .layout
+{
+    width: 170px;
+    min-width: 170px;
+    padding-top:  10px;
+    padding-right:  5px;
+}
+INPUT[type=checkbox] + LABEL
+{
+    padding: 0px 0px 0px 6px;
+}
+.note
+{
+    font-style: italic;
+    clear: left;
+    padding: 0px 0px 0px 10px;
+}
+P.note
+{
+    font-style: italic;
+    clear: none;
+}
+DIV.tableTitle
+{
+    width: 100%;
+    background-color: #015F11;
+    display: block;
+    padding: 5px 0px;
+    text-align: right;
+    color: #FFFFFF;
+}
+DIV.tableTitle .button
+{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+DIV.tableTitle .formLabel
+{
+    vertical-align: top;
+    padding: 0px 10px 0px 0px;
+}
+.modalAreaOfExpertiseTreeSelection
+{
+    overflow: auto;
+    height: 300px;
+    width: 680px;
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+}
+.aoeList
+{
+    min-width: 325px;
+    padding-top:3px;
+}
+.aoeParent
+{
+    font-weight: bold;
+    margin: 5px 0px 0px;
+}
+.aoeChild
+{
+    margin: 0px 0px 0px 10px;
+}
+.aoeSingle
+{
+    font-weight: bold;
+    margin: 5px 0px 0px;
+}
+.modalPopup H1
+{
+    font-size: 1em;
+}
+#foa.formarea
+{
+    width: auto;
+}
+#foa .formValue
+{
+}
+#foa .formValue LABEL
+{
+    margin: 0px 13px 0px 2px;
+    vertical-align: top;
+}
+#foa .formLabel
+{
+    font-weight: bold;
+    width: 200px;
+    display: block;
+    float: left;
+}
+#foa LABEL
+{
+    font-size: 100%;
+    font-weight: bold;
+    display: inline;
+}
+#foa .note
+{
+    width: 100%;
+    display: block;
+    text-align: left;
+    font-weight: normal;
+}
+/*TimeEntry styles*/
+.timeEntry_control
+{
+    vertical-align: middle;
+    margin-left: 2px;
+}
+* HTML .timeEntry_control
+{
+    /*IE only*/
+    margin-top: -4px;
+}
+/*AJAX CONTROL TOOLKIT AND JAVASCRIPT*/
+TD INPUT, TD SELECT, TD TEXTAREA
+{
+    margin: 0px 2px 10px 5px;
+    background-color: transparent;
+}
+.grid_7 TD
+{
+    vertical-align: middle;
+}
+.uploadTitle
+{
+    margin: 0px 0px 5px;
+}
+.uploadFile
+{
+    clear: both;
+    margin: 0px 0px 30px;
+}
+.uploadLabel
+{
+    min-width: 200px;
+    float: left;
+}
+.uploadResult
+{
+    float: left;
+    min-width: 300px;
+}
+.uploadRemove
+{
+    min-width: 196px;
+    float: left;
+}
+/*Correct color for EERE*/
+.resultDiv
+{
+    border: 1px solid #1F82BB;
+    padding: 5px;
+    margin: 0px 0px 10px;
+    background-color: #EEE;
+}
+.resultDivSuccess
+{
+    border: 1px solid #015F11;
+    padding: 5px;
+    margin: 0px 0px 10px;
+    background-color: #CCDFCF;
+    font-weight: bold;
+}
+.resultDivError
+{
+    border: 1px solid #FF0000;
+    padding: 5px;
+    margin: 0px 0px 10px;
+    background-color: #FFC4C1;
+    font-weight: bold;
+}
+.sliderValue
+{
+    border: 0;
+    color: #f6931f;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+}
+.sliderLabel
+{
+    text-align: right;
+    display: inline-block;
+    border: 1px solid #666666;
+    padding: 0px 5px;
+    min-width: 15px;
+    margin: 0 0 0 12px;
+}
+.cascade-loading
+{
+    background: transparent url(../images/CascadeLoadingIndicator.gif) no-repeat center;
+}
+/*END AJAX CONTROL TOOLKIT AND JAVASCRIPT
+Tabs*/
+#tabs A
+{
+    color: #086EB6;
+    font-size: 1.05em;
+    font-weight: 700;
+    background: #FFF url() no-repeat left top;
+    text-decoration: none;
+    padding-left: 12px;
+}
+#tabs A SPAN
+{
+    background: #FFF url() no-repeat right top;
+    padding: 14px 15px 8px 5px;
+}
+#tabs A, #tabs A SPAN
+{
+    display: block;
+    float: left;
+}
+/*Commented backslash hack hides rule from IE5-Mac \*/
+#tabs A, #tabs A SPAN
+{
+    float: none;
+}
+/*End IE5-Mac hack*/
+#tabs A:hover
+{
+    color: #FFF;
+    background: url(../images/tab_left_hover.png) no-repeat left top;
+    text-decoration: none;
+}
+#tabs A:hover SPAN
+{
+    background: url(../images/tab_right_hover.png) no-repeat right top;
+    padding: 14px 15px 8px 5px;
+}
+#tabs.on A
+{
+    color: #FFF;
+    background: url(../images/tab_left_hover.png) no-repeat left top;
+    text-decoration: none;
+}
+#tabs.on A SPAN
+{
+    background: url(../images/tab_right_hover.png) no-repeat right top;
+    padding: 14px 15px 8px 5px;
+}
+#tabs
+{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 25px;
+}
+#tabs LI
+{
+    float: left;
+    display: block;
+    margin: 0;
+    padding-right: 8px;
+}
+#tabs LI.on A
+{
+    color: #FFF;
+    background: url(../images/tab_left_hover.png) no-repeat left top;
+    text-decoration: none;
+    font-weight: bold;
+}
+#tabs LI.on A SPAN
+{
+    background: url(../images/tab_right_hover.png) no-repeat right top;
+    padding: 14px 15px 8px 5px;
+}
+/*Form Tabs*/
+#formTabs UL
+{
+    /*[disabled]border-bottom:1px solid #000000;*/
+}
+#formTabs UL
+{
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 5px; /*[disabled]border-bottom:1px solid #000000;*/
+}
+#formTabs LI
+{
+    float: left;
+    border: 1px solid #000000;
+    border-bottom-width: 0;
+    margin: 0 0.5em 0 0;
+    list-style: none;
+}
+#formTabs A
+{
+    display: block;
+    padding: 0 1em;
+    text-decoration: none;
+}
+#formTabs .selected
+{
+    position: relative;
+    top: 1px;
+    background: #FFFFFF;
+}
+#formContent
+{
+    border: 1px solid #000000;
+    clear: both;
+    vertical-align: baseline;
+    line-height: 1.4em;
+}
+#formContent .infoBox
+{
+    border-bottom: 1px solid #000000;
+    padding: 5px;
+    text-align: left;
+}
+.infoBoxForm
+{
+    text-align: left;
+    padding: 10px 10px 15px;
+}
+.fileDetails
+{
+    margin: 15px 0 0;
+}
+.fileUploadTitle
+{
+    font-style: italic;
+}
+.fileUploadDiv
+{
+    margin: 5px 0 0;
+}
+.fileUploadDiv .fileUpload
+{
+    margin: 0 0 0 5px;
+}
+.requiredStar
+{
+    margin: 0px 0px 0px 3px;
+    color: #FF0000;
+}
+/*END TABS
+BEGIN TABLES*/
+TH
+{
+    /*[disabled]background-color:#00324D;*/ /*[disabled]color:#F2F7EC;*/ /*[disabled]font-weight:bold;*/ /*[disabled]vertical-align:bottom;*/ /*[disabled]text-align:center;*/
+}
+TH A
+{
+    color: #F2F7EC !important;
+    text-decoration: none;
+}
+TH A:hover
+{
+    color: #F2F7EC !important;
+}
+.dataTable
+{
+    /*[disabled]background-color:#FFFFFF;*/ /*[disabled]text-align:center;*/ /*[disabled]border:1px solid #595959;*/ /*[disabled]font-size:0.9em;*/ /*[disabled]margin-left:0px;*/ /*[disabled]width:100%;*/ /*[disabled]margin-top:10px;*/ /*[disabled]border-collapse:collapse;*/
+}
+.dataTable TH
+{
+    /*[disabled]background-color:#005B8D;*/ /*[disabled]color:#F2F7EC;*/ /*[disabled]font-weight:bold;*/ /*[disabled]border:1px solid #000000;*/ /*[disabled]border-spacing:0px;*/
+}
+.dataTable TD
+{
+    color: #000000;
+    background-color: #FFFFFF;
+    padding: 4px;
+    vertical-align: top;
+    border: 1px solid #000000;
+    border-spacing: 0px;
+}
+.dataTable .pager TD
+{
+    border-style: none;
+    background-color: #005B8D;
+    color: #FFFFFF;
+    text-align: center;
+}
+.dataTable .selectedRow TD
+{
+    background-color: #E2DED6;
+    color: #333333;
+    font-weight: bold;
+}
+.dataTable .editRow TD
+{
+    background-color: #999999;
+}
+.dataTable .alternatingRow TD
+{
+    background-color: #FFFFFF;
+    color: #284775;
+}
+.dataTable TD.projectTitle
+{
+}
+.tableFooter
+{
+    background-color: #FFFFCC;
+    color: #330099;
+}
+TD.checkboxContainer
+{
+    padding-left: 20px;
+}
+TD.checkboxContainer INPUT
+{
+    margin-right: 5px;
+}
+.clearTable
+{
+    background-color: #FFFFFF;
+    text-align: left;
+    border: none;
+    border-collapse: collapse;
+}
+.clearTable TD
+{
+    background-color: #FFFFFF;
+    padding: 0 5px 0 0;
+    vertical-align: top;
+    border: none;
+    border-spacing: 0px;
+}
+.clearTable TD.label
+{
+    text-align: right;
+}
+.clearTable TD.value
+{
+    text-align: left;
+}
+.overflowhidden
+{
+    display: inline-block;
+    width: 10em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.pager TD
+{
+    border-style: none;
+    background-color: #005B8D;
+    color: #FFFFFF;
+    text-align: center;
+}
+.pager A
+{
+    color: #FFFFFF;
+}
+.pager SPAN
+{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.attention
+{
+    color: #800000;
+    font-family: Arial, sans-serif; /*font-size: 13px;*/
+    font-weight: bold;
+    text-decoration: underline;
+}
+.attentionBox
+{
+    border: 1px solid #1F82BB;
+    text-align: center;
+    padding: 10px 0px 10px 10px;
+    margin: 10px 0px 15px;
+    font-weight: bold;
+    background-color: #F3F8FB;
+}
+.attentionBox LABEL
+{
+    font-weight: bold;
+}
+.attentionBox .subpage-functions
+{
+    text-align: center;
+    margin-top: 30px;
+}
+.ErrorText
+{
+    color: #FF0000;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}
+.errorStatus
+{
+    color: #FF0000;
+    font-style: italic;
+    text-align: left;
+    border: 1px solid #FF0000;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.errorStatus .ErrorText
+{
+    text-align: left;
+}
+.submissionStatus
+{
+    border: 1px solid #1F82BB;
+    text-align: center;
+    padding: 5px 0px 10px;
+    margin: 10px 0px 15px;
+    font-weight: bold;
+    background-color: #F3F8FB;
+}
+.submissionStatus.alert
+{
+    border-color: #BA4F16;
+    background: #FABD17;
+    color: #000000;
+}
+.alert
+{
+    color: #FF0000;
+}
+.valid
+{
+    font-weight: bold;
+}
+/*END TABLES
+BEGIN SUBPAGE FUNCTIONS*/
+DIV.formBlock
+{
+    margin: 0px 0px 10px;
+}
+DIV.formBlock DIV
+{
+    margin: 0px 0px 10px;
+}
+.subpage-functions
+{
+    text-align: right;
+    margin: 10px 30px 15px 0px;
+    padding: 0px;
+}
+.subpage-functions INPUT
+{
+    margin-left: 10px;
+    padding: 0px;
+}
+.subpage-form-fields TD
+{
+    padding: 5px 0px 0px 15px;
+    vertical-align: top;
+}
+.subpage-form-fields-clear TD
+{
+    padding: 0px;
+    vertical-align: inherit;
+}
+.subpage-form-fields-clear .dxgvEditFormCaption
+{
+    padding: 4px 0px 0px;
+    vertical-align: inherit;
+}
+DIV #subpage-col-two
+{
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0 0 50px;
+}
+TD.calendarContainer
+{
+    padding: 0px 0px 20px 20px;
+}
+TD.layout
+{
+    line-height: 1.5em;
+}
+#divNDAFile TD
+{
+    padding: 0px 0px 15px;
+    text-align: left;
+}
+.smallText
+{
+    font-size: 0.88em;
+}
+/*END SUBPAGE FUNCTIONS
+BEGIN FOA List Layout*/
+DIV.foaList H3
+{
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #353535;
+    padding: 10px 0px 0px !important;
+}
+DIV.foaList .contactItem
+{
+    padding: 0px 0px 0px 15px;
+}
+DIV.foaList .functionLinks
+{
+    float: right;
+    margin: 0px 34px 0px 40px;
+}
+DIV.foaList .functionLinks A
+{
+    display: block;
+    cursor: pointer;
+    border: 1px solid #000000;
+    padding: 5px 30px 8px;
+    font-weight: bold !important;
+    color: #FFFFFF !important;
+    font-size: 1.5em;
+    background: #004368 url('../Images/ApplyButton_BlueGradient.png') repeat-x;
+    background: -moz-linear-gradient(top, #0075b2 0%, #004368 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0075b2), color-stop(100%,#004368));
+    filter: dropshadow(color=#000000, offx=0, offy=0);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0075b2', endColorstr='#004368',GradientType=0 );
+    text-shadow: 0px 0px 5px #000000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 0px 15px;
+}
+INPUT.button, TD.button A, A.button, .dxgvCommandColumn A
+{
+    cursor: pointer;
+    border: 1px solid #000000;
+    padding: 2px 15px 3px;
+    font-weight: bold !important;
+    color: #FFFFFF !important;
+    font-size: 1em;
+    background: #004368 url('../Images/ApplyButton_BlueGradient.png') repeat-x;
+    background: -moz-linear-gradient(top, #0075b2 0%, #004368 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0075b2), color-stop(100%,#004368));
+    filter: dropshadow(color=#000000, offx=0, offy=0);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0075b2', endColorstr='#004368',GradientType=0 );
+    text-shadow: 0px 0px 5px #000000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 0px 0px 10px;
+    white-space: nowrap;
+}
+INPUT[disabled='disabled'].button, TD.button A[disabled='disabled'], A[disabled='disabled'].button, .dxgvCommandColumn A[disabled='disabled']
+{
+    background: #808080;
+    background-image: none;
+    cursor: default;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F0F0F0', endColorstr='#C0C0C0',GradientType=0 );
+}
+#divNDAFile TD
+{
+    padding: 0px 0px 15px;
+}
+.uploadResult INPUT
+{
+    margin: 0px;
+}
+DIV.foaList .functionLinks A:hover
+{
+    text-decoration: none !important; /*[disabled]color:#666666;*/ /*[disabled]font-weight:bold;*/
+}
+.foaApprovedForPublic
+{
+    font-weight: bold;
+    color: #BA4F16;
+    margin: 10px 0px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #004063;
+    padding: 5px 0px;
+    background-color: #FFFFFF;
+}
+/*END FOA List Layout*/
+DIV.photoBox
+{
+    margin: 0px 0 15px 20px;
+    padding: 2px 2px 2px 1px;
+    border: 1px solid #CCC;
+    background-color: #FFFFFF;
+    float: right;
+}
+DIV.photoBoxRight
+{
+    display: block;
+    float: right;
+    width: 195px;
+}
+.inputLabel
+{
+    font-weight: bold;
+    padding: 0 10px 0 0;
+    float: left;
+}
+.contentRow
+{
+    margin: 20px 0px 10px;
+}
+.contentGroup
+{
+    width: 94%;
+    background-color: #EEE;
+    padding: 15px 20px;
+    border-top: 3px solid #1F82BB;
+    border-bottom: 3px solid #1F82BB;
+    margin: 0 0 15px;
+}
+.contentGroup INPUT, .contentGroup SELECT, .contentGroup TEXTAREA
+{
+    background-color: #FFFFFF;
+}
+.contentGroup INPUT[type='radio']
+{
+    background-color: inherit;
+}
+.contentGroup FIELDSET
+{
+    margin: 0px;
+}
+.reviewLabel
+{
+    font-size: 1.2em;
+    width: 100px;
+}
+.manualList
+{
+    width: 94%;
+    background-color: #EEE;
+    padding: 15px 20px;
+    border-top: 3px solid #1F82BB;
+    border-bottom: 3px solid #1F82BB;
+    margin: 0 0 15px;
+}
+.manualList DIV.divider
+{
+    border-top: 3px solid #1F82BB;
+}
+.tabSection
+{
+    padding: 15px 15px 0px;
+}
+.deadlineContainer
+{
+    text-align: left;
+    clear: both;
+    padding: 0px 0px 30px;
+}
+.deadlineContainer DIV
+{
+    float: left;
+    margin: 0px 10px 0px 0px;
+}
+.deadlineLabel
+{
+    width: 300px;
+}
+.deadlineLabelNarrowColOne
+{
+    width: 260px;
+}
+.deadlineLabelNarrowColTwo
+{
+    width: 30px;
+}
+.deadlineCheckboxContainer INPUT
+{
+    padding: 0px 5px 0px 0px;
+}
+/*REPORTS*/
+.reportTitle
+{
+}
+.reportTitle A
+{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0px 5px 0px 0px;
+}
+.reportDescription
+{
+    display: block;
+    margin: 0px 0px 10px;
+}
+/*BEGIN UPLOAD CONTROL*/
+DIV #subpage-col-two .dxucButton A, DIV #subpage-col-two .dxucButton A:visited
+{
+    color: #555555;
+    font: bold 0.9em Arial, Sans-serif;
+}
+/*BEGIN HTML EDITOR*/
+.dx LI, .dxe LI
+{
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+.dx LI, .dxe LI
+{
+    padding: 0px;
+    margin: 0px;
+}
+.dx IMG, .dxe IMG
+{
+    margin: 0px;
+}
+.dx UL
+{
+    margin: 0px;
+}
+.dx TD, .dxe TD, .HtmlEditor TD
+{
+    padding: 0px;
+}
+.dxeButtonEditButton
+{
+    padding: 0px 2px 0px 3px !important;
+}
+.dxeSBC
+{
+    vertical-align: bottom;
+}
+TD.calendarCell, TD.checkboxContainer
+{
+    padding: 0px 0px 0px 10px;
+}
+.comboBoxWrapper
+{
+}
+.comboBoxWrapper TD
+{
+    padding: 1px 2px;
+}
+.spinEditTable
+{
+    padding: 0px 0px 0px 5px;
+}
+.spinEditTable TD
+{
+    padding: 0px 5px 0px 0px;
+    vertical-align: middle;
+}
+.spinEditTable TD INPUT, .spinEditTable TD SELECT
+{
+    margin: 0px;
+}
+.spinEdit TD
+{
+    padding: 0px;
+    vertical-align: middle;
+}
+/*GridView Settings*/
+.dxgvControl, .dxgvDisabled
+{
+    border: 1px solid #9F9F9F;
+    font: 11px Tahoma;
+    background-color: #F2F2F2;
+    color: #000000;
+    cursor: default;
+}
+.dxgvControl .dxpcContent
+{
+    padding: 0px 0px 15px;
+}
+.dxgvControl .dxpcContent A
+{
+    padding: 0px 0px 15px;
+    font-weight: normal;
+}
+.dxgvDisabled
+{
+    color: #808080;
+}
+.dxgvControl A
+{
+    /*[disabled]color:#5555FF;*/
+}
+.dxgvDisabled A
+{
+    color: #808080;
+}
+.dxgvLoadingPanel
+{
+    border: 1px solid #9F9F9F;
+    background-color: #E3E3E1;
+    font: 9pt Tahoma;
+    color: #303030;
+}
+.dxgvLoadingPanel TD
+{
+    white-space: nowrap;
+    text-align: center;
+    padding: 12px;
+}
+.dxgvLoadingPanelStatusBar
+{
+    background-color: transparent;
+    font: 9pt Tahoma;
+}
+.dxgvLoadingPanelStatusBar TD
+{
+    white-space: nowrap;
+    text-align: center;
+    padding: 0px 2px;
+}
+.dxgvFilterPopupWindow
+{
+    color: #000000;
+    font: 9pt Tahoma;
+    border: 1px solid #9F9F9F;
+}
+.dxgvFilterPopupItemsArea
+{
+    color: #000000;
+    background-color: #FFFFFF;
+}
+.dxgvFilterPopupButtonPanel
+{
+    font: 9pt Tahoma;
+    background-color: #EDEDED;
+    border: 1px solid #DCDCDC;
+    border-left-width: 0px;
+    color: #000000;
+}
+.dxgvFilterPopupItem TD.dxgv, .dxgvFilterPopupActiveItem TD.dxgv, .dxgvFilterPopupSelectedItem TD.dxgv
+{
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    padding: 3px 2px 4px 3px;
+    cursor: default;
+    white-space: nowrap;
+}
+.dxgvFilterPopupActiveItem
+{
+    background: #CFCFCF;
+    color: #000000;
+}
+.dxgvFilterPopupSelectedItem
+{
+    background: #8D8D8D;
+    color: #FFFFFF;
+}
+.dxgvTable, .dataTable
+{
+    background-color: #FFFFFF;
+    border: 0;
+    border-collapse: separate !important;
+    overflow: hidden;
+    font: 9pt Tahoma;
+    color: #000000;
+    font-size: 0.9em;
+    width: 100%;
+}
+.dxgvTable TD, .dxgvTable TH
+{
+    padding: 0px;
+}
+.dxgvInlineEditRow, .dxgvDataRow
+{
+}
+.dxgvInlineEditRow TD.dxgv
+{
+    border-bottom: 1px solid #D3D3D3;
+    border-right: 1px solid #D3D3D3;
+}
+.dxgvDataRowAlt
+{
+    background-color: #EDEDEB;
+}
+.dxgvFilterRow
+{
+    background-color: #E7E7E7;
+}
+.dxgvEditForm
+{
+    background-color: #F0F0F0;
+}
+.dxgvEditForm TD.dxgv
+{
+    border-bottom: 1px solid #D3D3D3;
+    padding: 8px 10px 10px;
+}
+.dxgvEditForm TD.dxgvIndentCell
+{
+    background: #EDEDED;
+    border-right: 1px solid #CFCFCF;
+    border-left: 1px solid #CFCFCF;
+    border-top: 0px solid #000000;
+}
+.dxgvSelectedRow
+{
+    background-color: #A0A0A0;
+    color: #FFFFFF;
+}
+.dxgvFocusedRow
+{
+    background-color: #8D8D8D;
+    color: #FFFFFF;
+}
+.dxgvSelectedRow .dxgvCommandColumn A, .dxgvFocusedRow .dxgvCommandColumn A
+{
+    color: #FFFFFF;
+}
+.dxgvSelectedRow .dxgvCommandColumn A:hover, .dxgvFocusedRow .dxgvCommandColumn A:hover
+{
+    color: #F0F0F0;
+}
+.dxgvSelectedRow .dxgvCommandColumn A:visited, .dxgvFocusedRow .dxgvCommandColumn A:visited
+{
+    color: #F0F0F0;
+}
+.dxgvPreviewRow
+{
+    background-color: #F5F5F5;
+    color: #707070;
+}
+.dxgvDetailCell, .dxgvPreviewRow TD.dxgv, .dxgvEmptyDataRow TD.dxgv
+{
+    padding: 20px 2px 20px 4px;
+    border-bottom: 1px solid #D3D3D3;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+.dxgvPreviewRow TD.dxgv
+{
+    padding: 10px 10px 10px 15px;
+}
+.dxgvDetailCell
+{
+    padding: 16px 18px;
+}
+.dxgvDetailRow TD.dxgvIndentCell
+{
+    padding-right: 0px;
+    border-bottom: 1px solid #D3D3D3;
+}
+.dxgvEmptyDataRow
+{
+    color: #808080;
+}
+.dxgvEmptyDataRow TD.dxgv
+{
+    border-bottom: 1px solid #CFCFCF;
+    text-align: center;
+}
+.dxgvEditFormDisplayRow TD.dxgv, .dxgvDataRow TD.dxgv, .dxgvDataRowAlt TD.dxgv, .dxgvSelectedRow TD.dxgv, .dxgvFocusedRow TD.dxgv, .dataTable TD
+{
+    overflow: hidden;
+    border-bottom: 1px solid #CFCFCF;
+    border-right: 1px solid #CFCFCF;
+    border-top: 0;
+    border-left: 0;
+    padding: 3px 6px 4px;
+}
+TD.checkBoxCell
+{
+    text-align: center;
+}
+.dxgvEditFormDisplayRow
+{
+}
+.dxgvEditFormDisplayRow TD.dxgv
+{
+}
+.dxgvEditFormDisplayRow TD.dxgvIndentCell
+{
+    background: #EDEDED;
+    border-right: 1px solid #CFCFCF;
+    border-left: 1px solid #CFCFCF;
+    border-top: 0px solid #000000;
+}
+.dxgvEditingErrorRow
+{
+    background-color: #FFC8C8;
+    color: #FF0000;
+}
+.dxgvEditingErrorRow TD.dxgv
+{
+    white-space: pre-wrap;
+    border-bottom: 1px solid #D3D3D3;
+    border-right: 0;
+    border-top: 0;
+    border-left: 0;
+    padding: 6px 10px;
+}
+.dxgvFilterRow TD.dxgv
+{
+    border-bottom: 1px solid #C1C1C1;
+    border-right: 1px solid #C1C1C1;
+    border-top: 0;
+    border-left: 0;
+    padding: 2px;
+    overflow: hidden;
+    background-color: #005B8D;
+}
+.dxgvFilterRow TD.dxgv INPUT, .dxgvFilterRow TD.dxgv SELECT
+{
+    margin: 0px;
+}
+.dxic INPUT, .dxic SELECT, .dxic TEXTAREA
+{
+    margin: 0px;
+}
+.dxgvFilterRow TD.dxgv A
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.dxgvFilterRow TD.dxgv A:hover
+{
+    text-decoration: underline;
+}
+.dxgvGroupRow
+{
+    background-color: #EDEDED;
+}
+.dxgvFocusedGroupRow
+{
+    background-color: #8D8D8D;
+    color: #FFFFFF;
+}
+.dxgvGroupRow TD.dxgv, .dxgvFocusedGroupRow TD.dxgv
+{
+    border: 0 none #000000;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-bottom: 1px solid #D3D3D3;
+    padding: 3px 6px 4px;
+}
+.dxgvFocusedRow TD.dxgvIndentCell, .dxgvFocusedGroupRow TD.dxgvIndentCell, .dxgvSelectedRow TD.dxgvIndentCell
+{
+    background-color: #EDEDED !important;
+    border-right: 1px solid #CFCFCF;
+    border-left: 1px solid #CFCFCF;
+    border-top: 0px solid #000000;
+}
+.dxgvHeaderPanel
+{
+    background-color: #F9F9F9;
+    color: #000000;
+    padding: 8px 6px;
+    border-bottom: 1px solid #9F9F9F;
+}
+.dxgvHeader, TH
+{
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 4px 6px 5px !important;
+    border: 1px solid #9F9F9F;
+    background-color: #DCDCDC;
+    overflow: hidden;
+    font-weight: normal;
+    text-align: left;
+}
+.dxgvHeader, .dxgvHeader TABLE, .dataTable TH
+{
+    color: #000000;
+    background-color: #00324D;
+    color: #F2F7EC;
+    font-weight: bold;
+    vertical-align: bottom;
+}
+.dxgvHeader
+{
+    background-color: #00324D !important;
+}
+.dxgvHeader, .dxgvHeader TABLE
+{
+    color: #F2F7EC !important;
+}
+
+.dxgvHeader TD:hover
+{
+    text-decoration: underline;
+}
+.dxgvHeader TD
+{
+    white-space: nowrap;
+    font-weight: bold;
+    vertical-align: bottom;
+    padding: 0px;
+}
+.dxgvHeader A
+{
+    color: #0D45B7;
+}
+.dxgvCustomization, .dxgvPopupEditForm
+{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.dxgvGroupPanel
+{
+    white-space: nowrap;
+    font-size: 9pt;
+    background-color: #EDEDED;
+    color: #8D8D8D;
+    border-bottom: 1px solid #9F9F9F;
+    padding: 7px 4px 8px 6px;
+}
+.dxgvFooter
+{
+    background-color: #D7D7D7;
+    white-space: nowrap;
+}
+.dxgvFooter TD.dxgv
+{
+    padding: 5px 6px 6px;
+    border-bottom: 1px solid #BCBCBC;
+    border-right: 0;
+}
+.dxgvGroupFooter
+{
+    background-color: #E0E0E0;
+}
+.dxgvGroupFooter TD.dxgv
+{
+    white-space: nowrap;
+}
+.dxgvGroupFooter TD.dxgv
+{
+    padding: 5px 4px 6px 6px;
+    border-bottom: 1px solid #CFCFCF;
+    border-right: 0;
+}
+.dxgvDataRow TD.dxgvIndentCell, .dxgvGroupRow TD.dxgvIndentCell, .dxgvGroupFooter TD.dxgvIndentCell
+{
+    background-color: #EDEDED;
+    border-right: 1px solid #CFCFCF;
+    border-left: 1px solid #CFCFCF;
+    border-top: 0px solid #000000;
+}
+.dxgvTitlePanel, .dxgvTable CAPTION
+{
+    font-size: 15px;
+    font-weight: normal;
+    padding: 3px 3px 5px;
+    text-align: center;
+    background-color: #ACACAC;
+    color: #FFFFFF;
+    border-bottom: 1px solid #9F9F9F;
+}
+.dxgvLoadingDiv
+{
+    background-color: #808080;
+    opacity: 0.01;
+    filter: alpha(opacity=1);
+}
+.dxgvStatusBar
+{
+    border-top: 1px solid #9F9F9F;
+}
+.dxgvStatusBar TR.dxgv
+{
+    height: 20px;
+}
+.dxgvCommandColumn
+{
+    padding: 2px;
+}
+.dxgvCommandColumn A
+{
+    margin: 0 3px 0 0;
+    color: #0D45B7;
+}
+.dxgvCommandColumn A:hover
+{
+    color: #5494EA;
+}
+.dxgvCommandColumn A:visited
+{
+    color: #AB59A6;
+}
+.dxgvCommandColumnItem
+{
+}
+.dxgvEditFormTable
+{
+    padding: 2px 6px 6px 4px;
+    font: 11px Tahoma;
+    color: #000000;
+}
+.dxgvEditFormTable A
+{
+    color: #0D45B7;
+}
+.dxgvEditFormTable A:hover
+{
+    color: #5494EA;
+}
+.dxgvEditFormTable A:visited
+{
+    color: #AB59A6;
+}
+.dxgvEditFormCaption
+{
+    padding: 4px 4px 4px 10px !important;
+    white-space: nowrap;
+}
+.dxgvInlineEditCell
+{
+    padding: 1px;
+}
+.dxgvEditFormCell
+{
+    padding: 4px !important;
+    border: 0;
+}
+.dxgvPagerTopPanel
+{
+}
+.dxgvPagerBottomPanel
+{
+}
+.dxgvDetailButton
+{
+}
+.dxgvFilterBar
+{
+    border-top: 1px solid #9F9F9F;
+    background: #D4D4D4;
+}
+.dxgvFilterBar A
+{
+    color: #394EA2;
+    text-decoration: underline;
+}
+.dxgvFilterBarCheckBoxCell
+{
+    padding: 0 3px;
+    padding-right: 7px;
+}
+.dxgvFilterBarImageCell
+{
+    padding: 0 3px;
+    padding-right: 1px;
+    cursor: pointer;
+}
+.dxgvFilterBarExpressionCell
+{
+    font-size: 9pt;
+    padding: 5px 5px 8px 0;
+    white-space: nowrap;
+}
+.dxgvFilterBarClearButtonCell
+{
+    font-size: 9pt;
+    padding: 5px 6px 8px;
+}
+.dxgvFilterBuilderMainArea
+{
+    background: #FFFFFF;
+    padding: 6px 2px;
+}
+.dxgvFilterBuilderButtonArea
+{
+    background: #EDEDED;
+    border-top: 1px solid #CFCFCF;
+    padding: 6px;
+}
+.dxgvDataRowHover
+{
+    background: #CFCFCF;
+    color: #000000;
+}
+.dxgvControl .dxpControl TD.dxpCtrl, .dxgvDisabled .dxpControl TD.dxpCtrl, .dxgvControl .dxpLite, .dxgvDisabled .dxpLite
+{
+    padding-top: 4px;
+}
+.dataTable A
+{
+    text-decoration: none;
+}
+.dataTable A:visited
+{
+    color: #BA4F16;
+}
+.dataTable A:hover
+{
+    text-decoration: underline;
+}
+.dataTable
+{
+    border-left: 1px solid #9F9F9F;
+}
+.detailTableSecondary
+{
+    margin-top: 20px;
+}
+/*Pivot Grid Styles*/
+.dxpgControl, .dxpgCustForm
+{
+    color: #000000;
+    font: 9pt Tahoma;
+    border: 1px solid #9F9F9F;
+    background-color: #FFFFFF;
+}
+.dxpgContainerCell
+{
+    vertical-align: top;
+}
+.dxpgMainTable
+{
+    color: #000000;
+    font: 9pt Tahoma;
+    border: 0px solid #000000;
+    border-collapse: separate;
+    width: 100%;
+}
+.dxpgMainTable CAPTION
+{
+    background: #ACACAC;
+    color: #FFFFFF;
+    border-bottom: 1px solid #9F9F9F;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 3px 3px 5px;
+    text-align: center;
+}
+.dxpgHeader
+{
+    border-width: 0px;
+    color: #000000;
+    background-color: #DCDCDC;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: #00324D;
+    color: #F2F7EC;
+    font-weight: bold;
+}
+.dxpgHeaderTable
+{
+    border-width: 1px;
+    width: 100%;
+}
+.dxpgHeaderGroupButton
+{
+    padding-left: 4px;
+    vertical-align: middle;
+}
+.dxpgHeaderText
+{
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+.dxpgHeaderSort
+{
+    padding-left: 0px;
+    padding-right: 4px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    vertical-align: middle;
+}
+.dxpgHeaderFilter
+{
+    padding-left: 0px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    vertical-align: middle;
+}
+.dxpgHeaderHover
+{
+    background-color: #004368;
+    color: #F2F7EC;
+}
+.dxpgArea, .dxpgArea TABLE
+{
+    color: #000000;
+    font: 9pt Tahoma;
+}
+.dxpgArea
+{
+    border: 1px solid #9F9F9F;
+    background-color: #5494EA;
+    border-left-style: none;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-right-style: none;
+}
+.dxpgColumnArea
+{
+    border-bottom-style: solid;
+}
+.dxpgRowArea
+{
+}
+.dxpgDataArea
+{
+}
+.dxpgFilterArea
+{
+    background-color: #DCDCDC;
+    color: #808080;
+    border-bottom-style: solid;
+}
+.dxpgEmptyArea
+{
+    cursor: default;
+    padding-top: 6px;
+    padding-left: 6px;
+    padding-bottom: 7px;
+    padding-right: 6px;
+}
+.dxpgColumnFieldValue
+{
+    border: 1px solid #9F9F9F;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-right-style: none;
+    border-top-style: none;
+    padding: 4px 6px;
+    text-align: left;
+    background-color: #00324D;
+    color: #F2F7EC;
+    font-weight: bold;
+}
+.dxpgColumnTotalFieldValue
+{
+    background-color: #C9C9C9;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-right-style: none;
+    border-top-style: none;
+}
+.dxpgColumnGrandTotalFieldValue
+{
+    background-color: #BDBDBD;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-right-style: none;
+    border-top-style: none;
+    background-color: #00324D;
+    color: #F2F7EC;
+    font-weight: bold;
+}
+.dxpgRowFieldValue
+{
+    border: 1px solid #9F9F9F;
+    border-left-style: none;
+    border-bottom-style: none;
+    border-right-style: solid;
+    border-top-style: solid;
+    padding: 3px 6px 4px;
+    text-align: left;
+}
+.dxpgRowTotalFieldValue
+{
+    background-color: #C9C9C9;
+    border-left-style: none;
+    border-bottom-style: none;
+    border-right-style: solid;
+    border-top-style: solid;
+}
+.dxpgRowTreeFieldValue
+{
+    padding: 0px;
+    font: 0pt sans-serif;
+}
+.dxpgRowGrandTotalFieldValue
+{
+    background-color: #BDBDBD;
+    border-left-style: none;
+    border-bottom-style: none;
+    border-right-style: solid;
+    border-top-style: solid;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    background-color: #00324D;
+    color: #F2F7EC;
+    font-weight: bold;
+}
+.dxpgCollapsedButton
+{
+    vertical-align: -1px;
+    border: 0px solid #000000;
+    margin-right: 5px;
+}
+.dxpgSortByColumnImage
+{
+    vertical-align: -1px;
+    border: 0px solid #000000;
+    margin-left: 5px;
+}
+.dxpgCell
+{
+    text-align: right;
+    background-color: #FFFFFF;
+    border-color: #CECECE;
+    border-width: 1px;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-bottom-style: none;
+    border-right-style: none;
+    padding: 4px;
+    padding-top: 3px;
+    white-space: nowrap;
+}
+.dxpgKPICell
+{
+    text-align: center;
+    vertical-align: middle;
+}
+.dxpgTotalCell
+{
+    background-color: #F2F2F2;
+}
+.dxpgGrandTotalCell
+{
+    background-color: #E2E2E2;
+}
+.dxpgFilterWindow
+{
+    color: #000000;
+    font: 9pt Tahoma;
+    border: 1px solid #9F9F9F;
+}
+.dxpgFilterItemsArea
+{
+    color: #000000;
+    background-color: #FFFFFF;
+}
+.dxpgFilterItem
+{
+    font: 9pt Tahoma;
+    white-space: nowrap;
+}
+.dxpgFilterButton
+{
+    font: 9pt Tahoma;
+    padding: 2px 6px;
+}
+.dxpgFilterButtonPanel
+{
+    font: 9pt Tahoma;
+    background-color: #EDEDED;
+    border: 1px solid #DCDCDC;
+    color: #000000;
+}
+.dxpgLoadingDiv
+{
+    background-color: #FFFFFF;
+    opacity: 0.01;
+    filter: alpha(opacity=1);
+}
+.dxpgTopPager
+{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #9F9F9F;
+    background-color: #F2F2F2;
+    padding-bottom: 2px;
+}
+.dxpgBottomPager
+{
+    border-top: 1px solid #9F9F9F;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    background-color: #F2F2F2;
+    padding-bottom: 2px;
+}
+.dxpgCustomizationFieldsHeader
+{
+    color: #FFFFFF;
+    font: 11px Tahoma;
+}
+.dxpgCustomizationFieldsContent
+{
+    padding: 0px !important;
+}
+.dxpgLoadingPanel
+{
+    font: 9pt Tahoma;
+    color: #303030;
+    background-color: #FFFFFF;
+    border: 1px solid #9F9F9F;
+    text-align: center;
+    cursor: wait;
+}
+.dxpgLoadingPanel TD.dx
+{
+    padding: 12px;
+}
+.dxpgMenuItem
+{
+    font: 9pt Tahoma;
+}
+.dxpgDataHeadersImage
+{
+    margin-right: 5px;
+    vertical-align: -2px;
+}
+.dxpgPrefilterPanelContainer
+{
+    border-bottom-style: none;
+    border-left-style: none;
+    border-right-style: none;
+}
+.dxpgPrefilterPanel
+{
+    border: none;
+    background: #D4D4D4;
+}
+.dxpgPrefilterPanelLink
+{
+    color: #394EA2;
+    text-decoration: underline;
+}
+.dxpgPrefilterPanelCheckBoxCell
+{
+    padding: 0 3px;
+    padding-right: 7px;
+}
+.dxpgPrefilterPanelImageCell
+{
+    padding: 0 3px;
+    padding-right: 1px;
+    cursor: pointer;
+}
+.dxpgPrefilterPanelExpressionCell
+{
+    font-size: 9pt;
+    padding: 5px 5px 8px 0;
+    white-space: nowrap;
+}
+.dxpgPrefilterPanelClearButtonCell
+{
+    font-size: 9pt;
+    padding: 5px 6px 8px;
+}
+.dxpgFilterBuilderMainArea
+{
+    background: #FFFFFF;
+    padding: 6px 2px;
+}
+.dxpgFilterBuilderButtonArea
+{
+    background: #EDEDED;
+    border-top: 1px solid #CFCFCF;
+    padding: 6px;
+}
+.dxpgGroupSeparator
+{
+    vertical-align: middle;
+}
+.dxpgCustFieldsFilterAreaHeaders, .dxpgCustFieldsRowAreaHeaders, .dxpgCustFieldsColumnAreaHeaders, .dxpgCustFieldsDataAreaHeaders, .BottomPanelOnly1by4 .dxpgFLFRDiv, .BottomPanelOnly1by4 .dxpgFLCDDiv
+{
+    width: 100%;
+    height: 50%;
+}
+.StackedDefault .dxpgCustFieldsFieldList
+{
+    height: 34%;
+}
+.StackedDefault .dxpgFLFRDiv
+{
+    width: 50%;
+    height: 66%;
+    float: left;
+}
+.StackedDefault .dxpgFLCDDiv
+{
+    width: 50%;
+    height: 66%;
+    float: right;
+}
+.StackedDefault .dxpgCustFieldsFilterAreaHeaders .dxpgFLTextDiv, .StackedDefault .dxpgCustFieldsColumnAreaHeaders .dxpgFLTextDiv
+{
+    height: 47px;
+}
+.TopPanelOnly .dxpgCustFieldsFieldList
+{
+    width: 100%;
+    height: 100%;
+}
+.TopPanelOnly .dxpgFLDefereDiv .dxeBase, .TopPanelOnly .dxpgFLDefereDiv .dxpgFLDefereDB, .TopPanelOnly .dxpgFLFRDiv, .TopPanelOnly .dxpgFLCDDiv, .BottomPanelOnly1by4 .dxpgCustFieldsFieldList, .BottomPanelOnly2by2 .dxpgCustFieldsFieldList, .TopPanelOnly .dxpgFLTextDiv DIV
+{
+    display: none;
+}
+.TopPanelOnly .dxpgFLTextDiv
+{
+    height: 19px;
+}
+.TopPanelOnly .dxpgFLDefereDiv
+{
+    height: 16px;
+}
+.BottomPanelOnly2by2 .dxpgFLFRDiv, .StackedSideBySide .dxpgCustFieldsFieldList
+{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.BottomPanelOnly2by2 .dxpgFLCDDiv
+{
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+.StackedSideBySide .dxpgFLFRDiv, .StackedSideBySide .dxpgFLCDDiv
+{
+    width: 50%;
+    height: 50%;
+    float: right;
+}
+.dxpgCustFields
+{
+    display: block;
+    position: relative;
+}
+.dxpgFLListDiv DIV
+{
+    border: 1px solid #9F9F9F;
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 1px;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+.dxpgFLListDiv DIV DIV
+{
+    height: 100%;
+    padding: 0px;
+    border: 0px solid #FFFFFF;
+    overflow-y: auto;
+}
+.DragOver .dxpgFLListDiv DIV
+{
+    background: #FFD324;
+}
+.DragOver .dxpgFLListDiv DIV DIV
+{
+    background: #FFFFFF;
+}
+.dxpgFLListDiv
+{
+    padding: 0px 3px;
+}
+.dxpgFLButtonDiv .dxbButton DIV.dxb
+{
+    padding: 2px 8px 1px;
+}
+.dxpgFLButtonDiv .dxbButton DIV.dxbf
+{
+    border: 1px dotted #000000;
+    padding: 1px 7px 0px;
+}
+.dxpgFLTextDiv
+{
+    height: 28px;
+}
+.dxpgFLTextDiv DIV
+{
+    display: block;
+    float: left;
+    margin: -17px 0px 3px;
+    left: 6px;
+    top: 100%;
+    position: relative;
+}
+DIV.dxpgFLTextImgDiv
+{
+    display: block;
+    height: 16px;
+    width: 16px;
+    margin: -18px 0px 3px;
+    left: 3px;
+}
+.dxpgFLButtonDiv
+{
+    float: right;
+    height: 28px;
+    position: relative;
+    z-index: 1;
+}
+.dxpgFLDefereDiv
+{
+    height: 50px;
+}
+.dxpgCustFieldsDiv
+{
+    clear: both;
+    padding: 0px 9px;
+}
+.dxpgFLButton
+{
+    margin: 12px 12px 0px 0px;
+    width: 40px;
+    height: 23px;
+}
+.dxpgFLDefereDiv .dxeBase
+{
+    float: left;
+    display: block;
+    border-collapse: separate;
+    padding: 18px 0px 0px;
+    margin-left: 9px;
+}
+.dxpgFLDefereDB
+{
+    float: right;
+    display: block;
+    padding: 0px 12px 0px 0px;
+    margin-top: 16px;
+}
+.dxpgFLDefereDiv .dxbButton DIV.dxb
+{
+    padding: 2px 14px;
+}
+.dxpgFLDefereDiv .dxbButton DIV.dxbf
+{
+    padding: 1px 13px;
+    border: 1px dotted #000000;
+}
+.dxpgFLListDiv TABLE
+{
+    width: 100%;
+    table-layout: fixed;
+    overflow: visible;
+}
+.dxpgFLListDiv TABLE TABLE TD
+{
+    overflow: hidden;
+}
+.sectionDivider
+{
+    border-top: 1px solid #CFCFCF;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+INPUT[email-invalid="true"]
+{
+    border: 1px solid #FF0000;
+    background-color: #FFDDDD;
+    padding: 1px;
+}
+/*AJAX Progress styles*/
+#progressBackgroundFilter
+{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    z-index: 1000;
+}
+#processMessage
+{
+    position: fixed;
+    top: 40%;
+    left: 43%;
+    padding: 10px;
+    height: 50px;
+    z-index: 1001;
+    background-color: #FFF;
+}
+/*Modal popup styles*/
+.modalBackground
+{
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    background-color: #999999;
+}
+.modalContainer
+{
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    top: 50%;
+    z-index: 750;
+}
+.modalPopup
+{
+    background-color: #FFFFDD;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #808080;
+    padding: 3px;
+    min-width: 700px;
+}
+.watermark
+{
+    font-style: italic;
+    color: #B8B8B8;
+}
+/*Announcements*/
+.announcementList
+{
+    margin: 0px 0px 15px;
+    border-top: 2px solid #1F82BB;
+    padding: 10px 0px 0px;
+}
+.announcement
+{
+    margin: 0px 0px 10px;
+}
+.announcement H2
+{
+    color: #BA4F16;
+}
+.announcementText
+{
+    margin: 0 0 10px;
+    border-bottom: 2px solid #1F82BB;
+    padding: 0px 0px 10px;
+}
+.treeviewPopupBox
+{
+    overflow: auto;
+    height: 300px;
+    width: 700px;
+    border: 1px solid #000000;
+}
+/*Review Rating Control*/
+TABLE.reviewRating LABEL
+{
+    display: block;
+    font-size: 1.1em;
+    padding: 3px;
+    font-weight: bold;
+}
+TABLE.reviewRating INPUT
+{
+    padding: 9px 3px 0px;
+}
+TABLE.reviewRating TD
+{
+    text-align: center;
+    width: 20px;
+    padding: 7px 8px 5px;
+    vertical-align: middle;
+    border-top: 1px solid #A2A2A2;
+    border-bottom: 1px solid #A2A2A2;
+    border-left: 1px solid #A2A2A2;
+}
+TABLE.reviewRating
+{
+    border-right: 1px solid #A2A2A2;
+}
+TABLE.reviewRating_noBorder
+{
+    border-left: 1px solid #A2A2A2;
+    border-right: 1px solid #A2A2A2;
+    padding-left: 10px;
+}
+TABLE.reviewRating_noBorder LABEL
+{
+    display: block;
+    font-size: 1.1em;
+    padding: 7px 0px 0px;
+    font-weight: bold;
+}
+TABLE.reviewRating_noBorder INPUT
+{
+    padding: 9px 3px 0px;
+}
+TABLE.reviewRating_noBorder TD
+{
+    text-align: center;
+    min-width: 40px;
+    max-width: 90px;
+    padding: 0px 12px 0px 0px;
+}
+H1 .sectionHeader
+{
+    font-size: 0.8em;
+    text-transform: none;
+    cursor: pointer;
+}
+.panelSection
+{
+    padding: 5px;
+    margin: 0;
+    text-align: left;
+    border: 1px solid #CCC;
+}
+.panelSubSection
+{
+    padding-left: 20px;
+    height: 0px;
+    overflow: hidden;
+}
+.panelSectionCell-functions
+{
+    padding: 5px;
+}
+.infoIcon
+{
+    padding: 0px 0px 0px 5px;
+    cursor: help;
+}
+.reportResults
+{
+    width: 100%;
+    overflow: auto;
+}
+.FoaPublishSection
+{
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+}
+
+.FoaPublishSection DIV
+{
+    padding: 5px;
+}
+.imgToggle
+{
+    cursor: pointer;
+}
+.headerButton
+{
+    font-size: .6em !important;
+    padding-bottom: 3px;
+}
+
+.fileUpload TD {
+    border: none;
+}
+
+.fileUpload TD .dxucTextBox {
+    border: 1px solid, #000000;
+}
+.headerWithnoUnderline
+{
+    color: #004063;
+    font-size: 1.7em;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+    border-bottom: 0px!important;
+    text-transform: uppercase;
+    width: 100%;
+}
+.announcementTitle
+{
+	font-weight: bold;
+	font-size: larger;
+}
