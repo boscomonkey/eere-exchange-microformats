@@ -18,10 +18,16 @@ class ExchangeParser
     def self.upgrade(html_fname)
       parser = ExchangeParser.new(html_fname)
 
-      # add foa_documents_list to <ul class="list">
+      # add foa-documents-list
       lists = ExchangeParser.find_documents_list(parser.doc)
       lists.each {|elt|
         ExchangeParser.add_css_class elt, 'foa-documents-list'
+      }
+
+      # add foa-contacts-list
+      contacts = ExchangeParser.find_contacts(parser.doc)
+      contacts.each {|cc|
+        ExchangeParser.add_css_class cc, 'foa-contacts-list'
       }
 
       # write modified html
@@ -38,6 +44,11 @@ class ExchangeParser
       else
         element['class'] = css_value
       end
+    end
+
+    def find_contacts(target)
+      find_program_highlights(target)
+        .xpath("div[contains(@id, 'divContacts')]/ul[@class='list']")
     end
 
     def find_descriptions(target)
@@ -185,6 +196,18 @@ if __FILE__ == $0
       # duplicate adds of the same class is ignored
       ExchangeParser.add_css_class(lst, 'foa_documents_list')
       assert_equal 'foa_documents_list list', lst['class']
+    end
+
+    def test_class_method_find_contacts
+      # search under a nodeset
+      groups = @@parser.foa_groups
+      contacts = ExchangeParser.find_contacts(groups)
+      assert_equal 107, contacts.size
+
+      # search under 1 node
+      grp = groups[0]
+      contacts = ExchangeParser.find_contacts(grp)
+      assert_equal 1, contacts.size
     end
 
     def test_class_method_find_descriptions
