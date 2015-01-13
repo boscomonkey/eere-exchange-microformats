@@ -19,6 +19,10 @@ class ExchangeParser
       element['class'] = css_value
     end
 
+    def find_descriptions(nodeOrNodeset)
+      nodeOrNodeset.xpath(".//div[@class='program_highlights']/div[@class='foaDescription']/span[contains(@id, 'FoaDescriptionLabel')]")
+    end
+
     def foa_title(node)
       node.at("h2[@class='hp']")
     end
@@ -78,6 +82,7 @@ class ExchangeParser
   def foa_titles
     @titles ||= self.body.xpath(".//a[contains(@id, 'FoaTitleHyperLink')]")
   end
+
 end
 
 if __FILE__ == $0
@@ -127,6 +132,13 @@ if __FILE__ == $0
         arr = txt.split ':'
         assert arr.size >= 2, "NOT ENOUGH COLONS: #{txt}"
       end
+    end
+
+    def test_class_method_foa_descriptions
+      groups = @@parser.foa_groups
+      descs = ExchangeParser.find_descriptions(groups)
+
+      assert_equal 110, descs.size
     end
 
     def test_class_method_partition_title
