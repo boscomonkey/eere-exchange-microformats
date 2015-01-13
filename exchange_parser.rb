@@ -30,6 +30,10 @@ class ExchangeParser
         ExchangeParser.add_css_class cc, 'foa-contacts-list'
       }
 
+      # add foa-faq
+      faqs = ExchangeParser.find_faq(parser.doc)
+      faqs.each {|faq| ExchangeParser.add_css_class faq, 'foa-faq' }
+
       # write modified html
       File.open("new.#{html_fname}", 'w') {|f| f << parser.doc.to_s }
     end
@@ -58,6 +62,11 @@ class ExchangeParser
     def find_documents_list(target)
       find_program_highlights(target).
         xpath("div[contains(@id, 'FOAHighlightDocuments')]/ul[@class='list']")
+    end
+
+    def find_faq(target)
+      ExchangeParser.find_program_highlights(target)
+        .xpath("div[contains(@id, 'divFAQLink')]/p/a[@href]")
     end
 
     def find_program_highlights(target)
@@ -223,6 +232,21 @@ if __FILE__ == $0
 
       assert_equal 104, foa_docs.size
       assert_equal 'list', foa_docs.first['class']
+    end
+
+    def test_class_method_find_faq
+      # search under a nodeset
+      groups = @@parser.foa_groups
+      faqs = ExchangeParser.find_faq(groups)
+      assert_equal 83, faqs.size
+
+      hrefs = faqs.collect {|faq| faq['href'] }
+      assert_equal 77, hrefs.uniq.size
+
+      # search under 1 node
+      grp = groups[0]
+      faq = ExchangeParser.find_faq(grp)
+      assert_equal 1, faq.size
     end
 
     def test_class_method_partition_title
