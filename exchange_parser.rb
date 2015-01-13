@@ -14,13 +14,43 @@ groups = parser.foa_groups	# NodeSet
 
 =end
 class ExchangeParser
+  class Util
+    def self.upgrade(html_fname)
+      parser = ExchangeParser.new(html_fname)
+
+      # add foa_documents_list to <ul class="list">
+      lists = ExchangeParser.find_documents_list(parser.doc)
+      lists.each {|elt|
+        ExchangeParser.add_css_class elt, 'foa-documents-list'
+      }
+
+      # write modified html
+      File.open("new.#{html_fname}", 'w') {|f| f << parser.doc.to_s }
+    end
+  end
+
   class << self
     def add_css_class(element, css_value)
-      element['class'] = css_value
+      if old_css = element['class']
+        arry = old_css.split(/\s+/)
+        arry << css_value
+        element['class'] = arry.sort.uniq.join(' ')
+      else
+        element['class'] = css_value
+      end
     end
 
-    def find_descriptions(nodeOrNodeset)
-      nodeOrNodeset.xpath(".//div[@class='program_highlights']/div[@class='foaDescription']/span[contains(@id, 'FoaDescriptionLabel')]")
+    def find_descriptions(target)
+      find_program_highlights(target).xpath("div[@class='foaDescription']/span[contains(@id, 'FoaDescriptionLabel')]")
+    end
+
+    def find_documents_list(target)
+      find_program_highlights(target).
+        xpath("div[contains(@id, 'FOAHighlightDocuments')]/ul[@class='list']")
+    end
+
+    def find_program_highlights(target)
+      target.xpath(".//div[@class='program_highlights']")
     end
 
     def foa_title(node)
@@ -35,7 +65,7 @@ class ExchangeParser
 
       element.content = ''
 
-      span_head = Nokogiri::XML::Node.new 'span', element
+      span_head = Nokogiri::XML::Node.new 'span', element.document
       add_css_class span_head, 'foa_title_number'
       span_head.content = head
       element.add_child span_head
@@ -90,7 +120,13 @@ if __FILE__ == $0
 
   class ExchangeParserTest < Minitest::Test
     def setup
-      @@parser ||= ExchangeParser.new('index.html')
+      @@parser ||= new_parser
+    end
+
+    # called directly from test methods that need a totally new parser
+    # instead of sharing one
+    def new_parser
+      ExchangeParser.new('index.html')
     end
 
     def test_initialize
@@ -134,11 +170,36 @@ if __FILE__ == $0
       end
     end
 
-    def test_class_method_foa_descriptions
+    def test_class_method_add_css_class
+      grp = new_parser.foa_groups.first
+      lists = ExchangeParser.find_documents_list(grp)
+
+      assert_equal 1, lists.size
+
+      lst = lists[0]
+      assert_equal 'list', lst['class']
+
+      ExchangeParser.add_css_class(lst, 'foa_documents_list')
+      assert_equal 'foa_documents_list list', lst['class']
+
+      # duplicate adds of the same class is ignored
+      ExchangeParser.add_css_class(lst, 'foa_documents_list')
+      assert_equal 'foa_documents_list list', lst['class']
+    end
+
+    def test_class_method_find_descriptions
       groups = @@parser.foa_groups
       descs = ExchangeParser.find_descriptions(groups)
 
       assert_equal 110, descs.size
+    end
+
+    def test_class_method_find_documents_list
+      groups = @@parser.foa_groups
+      foa_docs = ExchangeParser.find_documents_list(groups)
+
+      assert_equal 104, foa_docs.size
+      assert_equal 'list', foa_docs.first['class']
     end
 
     def test_class_method_partition_title
