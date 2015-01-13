@@ -34,6 +34,12 @@ class ExchangeParser
       faqs = ExchangeParser.find_faq(parser.doc)
       faqs.each {|faq| ExchangeParser.add_css_class faq, 'foa-faq' }
 
+      # add submission deadlines
+      deadlines = ExchangeParser.find_submission_deadlines(parser.doc)
+      deadlines.each {|dl|
+        ExchangeParser.add_css_class dl, 'foa-deadlines'
+      }
+
       # write modified html
       File.open("new.#{html_fname}", 'w') {|f| f << parser.doc.to_s }
     end
@@ -71,6 +77,11 @@ class ExchangeParser
 
     def find_program_highlights(target)
       target.xpath(".//div[@class='program_highlights']")
+    end
+
+    def find_submission_deadlines(target)
+      ExchangeParser.find_program_highlights(target)
+        .xpath("ul[@class='list']")
     end
 
     def foa_title(node)
@@ -247,6 +258,21 @@ if __FILE__ == $0
       grp = groups[0]
       faq = ExchangeParser.find_faq(grp)
       assert_equal 1, faq.size
+    end
+
+    def test_class_method_find_submission_deadlines
+      # search under a nodeset
+      groups = @@parser.foa_groups
+      deadlines = ExchangeParser.find_submission_deadlines(groups)
+      assert_equal 110, deadlines.size
+
+      # all should have the same type
+      assert_equal ["ul"], deadlines.collect(&:name).uniq
+
+      # search under 1 node
+      grp = groups[0]
+      deadline = ExchangeParser.find_submission_deadlines(grp)
+      assert_equal 1, deadline.size
     end
 
     def test_class_method_partition_title
